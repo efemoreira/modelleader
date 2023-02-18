@@ -1,0 +1,8 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <linearGradient id="nuvem-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+    <stop offset="0%" stop-color="#E0D5C5" />
+    <stop offset="50%" stop-color="#A88E7C" />
+    <stop offset="100%" stop-color="#8A6E45" />
+  </linearGradient>
+  <path d="M443.22 198.9c-6.2-34.7-36.1-60.7-71.2-60.7-22.9 0-42.9 11.1-55.6 28.1-15.3-8.8-33.3-13.9-52.6-13.9-39.1 0-73.5 23.8-88.3 57.5C88.5 222.8 56.5 253.5 56.5 295c0 42.7 34.8 77.5 77.5 77.5h309.4c32.4 0 58.8-26.4 58.8-58.8 0-30.4-23.2-55.2-52.8-58.7z" fill="url(#nuvem-gradient)"/>
+</svg>
