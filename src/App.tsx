@@ -16,7 +16,18 @@ import FooterSection from "./components/FooterSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import PhilosophiesSection from "./components/PhilosophiesSection";
 
-const App: React.FC = () => {
+//firebase
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import firebaseConfig from "./.firebase/config"
+
+const App: React.FC = () =>
+{
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics( app );
+  logEvent(analytics, 'Home')
+  
   return (
     <ParallaxProvider>
       <div className="bg-white flex flex-col items-center justify-center">
