@@ -8,7 +8,7 @@ const PhilosophiesSection = () => {
   return (
     <div
       id="philosophy"
-      className="flex flex-col justify-center items-center p-20 "
+      className="flex flex-col justify-center items-center p-10 "
     >
       <AnimationOnScroll className="w-full" animateIn="animate__fadeInUp">
         <div className="w-1/2 mt-10">

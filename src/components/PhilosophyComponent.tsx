@@ -20,7 +20,7 @@ const PhilosophyComponent: React.FC<PhilosophyProps> = ({
   return (
     <AnimationOnScroll
       className="flex flex-col md:flex-row items-center mb-8 justify-center mx-4 w-5/6"
-      animateIn={`animate__fadeIn${isImageOnLeft ? "Left" : "Right"}Big`}
+      animateIn={`animate__fadeIn${isImageOnLeft ? "Left" : "Right"}`}
     >
       <div
         className={`flex relative md:mr-4  text-[#3b3e463f] text-9xl font-serif italic align-top top-[-24px] ${
@@ -34,7 +34,7 @@ const PhilosophyComponent: React.FC<PhilosophyProps> = ({
         {number}
       </div>
       <div className="text">
-        <h3 className="text-lg font-bold mb-2">{text}</h3>
+        <h3 className="text-lg text-center font-bold mb-2">{text}</h3>
       </div>
       <div
         className={`image mt-4 md:mt-0 ${
