@@ -1,82 +1,46 @@
 import React from "react";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
-
-import STR_CONSTANTS from "./assets/strings";
-
-import forest from "./assets/forest.jpeg";
-import andrew2 from "./assets/andrew.jpeg";
-import tree from "./assets/tree.jpeg";
-
-import HomeBannerSection from "./components/HomeBannerSection";
-import OfferingsSection from "./components/OfferingsSection";
-import ContactSection from "./components/ContactSection";
-import HeaderComponent from "./components/HeaderComponent";
-import AboutSection from "./components/AboutSection";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterSection from "./components/FooterSection";
-import TestimonialsSection from "./components/TestimonialsSection";
-import PhilosophiesSection from "./components/PhilosophiesSection";
+import HeaderComponent from "./components/HeaderComponent";
+import OurTeamPage from "./pages/OurTeamPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
+import OfferingPage from "./pages/OfferingPage";
+import PublicationsPage from "./pages/PublicationsPage";
+import AndrewPage from "./pages/AndrewPage";
+import ArielPage from "./pages/ArielPage";
+import IndividualLeadersPage from "./pages/IndividualLeadersPage";
+import LeadershipTeamsPage from "./pages/LeadershipTeamsPage";
+import OrganizationsPage from "./pages/OrganizationsPage";
+import TestimonialPage from "./pages/TestimonialsPage";
 
-//firebase
-import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent } from "firebase/analytics";
-import firebaseConfig from "./.firebase/config"
-
-const App: React.FC = () =>
-{
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics( app );
-  logEvent(analytics, 'Home')
-  
+const App: React.FC = () => {
   return (
-    <ParallaxProvider>
-      <div className="bg-white flex flex-col items-center justify-center">
+    <div className="bg-white flex flex-col items-center justify-center">
+      <BrowserRouter>
         <HeaderComponent />
-        <main className="w-full h-full flex flex-col items-center justify-center">
-          <Parallax id="home" className="w-full" speed={-50}>
-            <section className="w-full min-h-screen">
-              <HomeBannerSection />
-            </section>
-          </Parallax>
-          <div id="about" className="w-full z-10">
-            <section className="w-full min-h-screen bg-white">
-              <AboutSection
-                title={STR_CONSTANTS.ABOUT_MODEL_TITLE}
-                description={STR_CONSTANTS.ABOUT_MODEL_DESCRIPTION}
-                imageSrc={tree}
-                imagePosition="left"
-              />
-            </section>
-            <TestimonialsSection />
-            <section className="w-full min-h-screen bg-white">
-              <AboutSection
-                title={STR_CONSTANTS.ABOUT_ME_TITLE}
-                description={STR_CONSTANTS.ABOUT_ME_DESCRIPTION}
-                imageSrc={andrew2}
-                imagePosition="right"
-              />
-            </section>
-            <PhilosophiesSection />
-          </div>
-          <Parallax className="w-full min-h-screen" speed={-2} id="offering">
-            <section
-              className="w-full min-h-screen bg-cover"
-              style={{
-                backgroundImage: `url(${forest})`,
-              }}
-            >
-              <OfferingsSection />
-            </section>
-          </Parallax>
-          <div className="z-10 w-full min-h-screen" id="contact">
-            <section className="w-full min-h-screen">
-              <ContactSection />
-            </section>
-          </div>
-        </main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/ourteam" element={<OurTeamPage />} />
+          <Route path="/testimony" element={<TestimonialPage />} />
+          <Route path="/andrew" element={<AndrewPage />} />
+          <Route path="/ariel" element={<ArielPage />} />
+          <Route path="/offerings" element={<OfferingPage />} />
+          <Route
+            path="/individual-leaders"
+            element={<IndividualLeadersPage />}
+          />
+          <Route path="/leadership-teams" element={<LeadershipTeamsPage />} />
+          <Route path="/organizations" element={<OrganizationsPage />} />
+          <Route path="/publications" element={<PublicationsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
         <FooterSection />
-      </div>
-    </ParallaxProvider>
+      </BrowserRouter>
+    </div>
   );
 };
 

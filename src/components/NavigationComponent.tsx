@@ -1,22 +1,62 @@
-import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { logEvent } from "firebase/analytics";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { analytics } from "../.firebase/firebase";
+
+interface NavItem {
+  title: string;
+  to: string;
+  dropdown?: boolean;
+  dropdownItems?: NavItem[];
+}
 
 const NavigationComponent: React.FC = () => {
-  const navLinks = [
-    { title: "Home", to: "home" },
-    { title: "About", to: "about" },
-    { title: "Experience", to: "experience" },
-    { title: "Philosophy", to: "philosophy" },
-    { title: "Offering", to: "offering" },
-    { title: "Contact", to: "contact" },
+  const navLinks: NavItem[] = [
+    { title: "Home", to: "/" },
+    {
+      title: "About",
+      to: "/about",
+      dropdown: true,
+      dropdownItems: [
+        { title: "Model Leader", to: "/about" },
+        { title: "Our Team", to: "/ourteam" },
+      ],
+    },
+
+    {
+      title: "Offerings",
+      to: "/offerings",
+      dropdown: true,
+      dropdownItems: [
+        { title: "Individual Leaders", to: "/individual-leaders" },
+        { title: "Leadership Teams", to: "/leadership-teams" },
+        { title: "Organizations", to: "/organizations" },
+      ],
+    },
+    {
+      title: "Resources",
+      to: "/publications",
+    },
+    { title: "Testimonials", to: "/testimony" },
+    { title: "Contact", to: "/contact" },
   ];
 
   const [showNav, setShowNav] = useState(false);
+  const [dropdownStates, setDropdownStates] = useState<boolean[]>(
+    navLinks.map(() => false)
+  );
 
   const isMobile = window.innerWidth < 768;
 
   const toggleNav = () => {
     setShowNav(!showNav);
+  };
+
+  const toggleDropdown = (index: number) => {
+    const newStates = dropdownStates.map((state, i) =>
+      i === index ? !state : false
+    );
+    setDropdownStates(newStates);
   };
 
   return (
@@ -40,20 +80,47 @@ const NavigationComponent: React.FC = () => {
             : {}
         }
       >
-        {navLinks.map((link) => (
-          <Link
+        {navLinks.map((link, index) => (
+          <div
             key={link.to}
-            className="ml-4 sm:ml-6 text-sm sm:text-base font-medium text-gray-800 cursor-pointer transition-colors duration-200 hover:text-green-600 py-1 border-b-2 border-transparent active:text-green-600 active:border-green-600"
-            activeClass="active"
-            smooth
-            spy
-            to={link.to}
-            onClick={() => setShowNav(false)}
+            className="ml-4 sm:ml-6 text-sm sm:text-base font-medium text-[#004AAD] cursor-pointer transition-colors duration-200 hover:text-[#9a9fd7] py-1 border-b-2 border-transparent active:text-[#9a9fd7] active:border-[#9a9fd7]"
+            onMouseEnter={
+              link.dropdown ? () => toggleDropdown(index) : undefined
+            }
+            onMouseLeave={
+              link.dropdown ? () => toggleDropdown(index) : undefined
+            }
           >
-            {link.title}
-          </Link>
+            <Link
+              to={link.to}
+              onClick={() => {
+                logEvent(analytics, `${link.title}NavigationClicked`);
+                return isMobile && !link.dropdown ? toggleNav() : null;
+              }}
+            >
+              {link.title}
+            </Link>
+            {link.dropdown && dropdownStates[index] && (
+              <div className="absolute flex flex-col z-10 bg-white p-2 rounded-md shadow-md">
+                {link.dropdownItems?.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => {
+                      logEvent(analytics, `${link.title}NavigationClicked`);
+                      return isMobile ? toggleNav() : null;
+                    }}
+                    className="text-[#004AAD] py-2 px-6 hover:text-[#9a9fd7] cursor-pointer"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </nav>
+
       <button className="sm:hidden" onClick={toggleNav}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,45 +142,3 @@ const NavigationComponent: React.FC = () => {
 };
 
 export default NavigationComponent;
-
-// const Header = styled.header`
-//   width: 100%;
-//   height: 100px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: white;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 100;
-// `;
-
-// const HeaderBody = styled.div`
-//   width: 80%;
-//   height: 50px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   background-color: white;
-//   position: fixed;
-//   z-index: 100;
-// `;
-
-// const Navigation = styled.nav`
-//   display: flex;
-//   align-items: center;
-// `;
-
-// const NavLink = styled(Link)`
-//   margin-left: 20px;
-//   text-decoration: none;
-//   color: black;
-//   font-size: 18px;
-//   transition: all 0.2s ease-in-out;
-//   cursor: pointer;
-
-//   &:hover {
-//     color: #317e81;
-//   }
-// `;

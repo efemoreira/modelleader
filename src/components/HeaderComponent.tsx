@@ -1,18 +1,26 @@
-import React from "react";
-import STR_CONSTANTS from "../assets/strings";
 import NavigationComponent from "./NavigationComponent";
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/5.png";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../.firebase/firebase";
 
 const HeaderComponent: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <header className="w-screen h-16 sm:h-20 flex items-center justify-center bg-white fixed top-0 left-0 z-[999]">
+    <header className="w-screen h-20 sm:h-20 flex items-center justify-center bg-white fixed top-0 left-0 z-[999]">
       <div className="w-4/5 sm:w-3/4 h-10 sm:h-16 flex items-center justify-between bg-white z-[999]">
-        <div className="flex flex-col items-center">
-          <h1 className="tracking-widest text-2xl font-extrabold">
-            {STR_CONSTANTS.TITLE_HEADER}
-          </h1>
-          <h4 className="tracking-widest font-light text-sm">
-            {STR_CONSTANTS.SUBT_HEADER}
-          </h4>
+        <div
+          className="flex flex-row items-center cursor-pointer space-x-2"
+          onClick={() => {
+            logEvent(analytics, "HeaderClicked");
+            if (window.location.pathname === "/") {
+              window.scrollTo(0, 0);
+            } else {
+              navigate("/");
+            }
+          }}
+        >
+          <img src={logo} alt="logo" className="h-32" />
         </div>
         <NavigationComponent />
       </div>

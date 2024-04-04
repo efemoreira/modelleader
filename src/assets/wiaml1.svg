@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 500 500" xmlSpace="preserve" ref={svgRef} aria-labelledby={titleId}>
+  {title ? <title id={titleId}>{title}</title> : null}
+  <desc>Created with Fabric.js 5.3.0</desc>
+  <defs></defs>
+  <g transform="matrix(0 -3.8223091522 3.8223091522 0 175.3748649888 250)" id="YszqcxRkgS61U8fDQRwiH">
+    <path style="stroke:rgb(0,74,173);stroke-width:6;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill:rgb(0,74,173);fill-rule:nonzero;opacity:1" vector-effect="non-scaling-stroke" transform="translate(0, 0)" d="M 24.04011 -42.83405 L 49.460499999999996 0 L 24.040109999999995 42.83405 L -24.040110000000002 42.83405 L -49.4605 0 L -24.040110000000002 -42.83405 z" stroke-linecap="round"></path>
+  </g>
+  <g transform="matrix(0 -3.8164560322 3.8164560322 0 250.404517476 250.2894982413)" id="XjRayKa1FDRFnm_fpVg6I">
+    <path style="stroke:rgb(0,74,173);stroke-width:6;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill:none;fill-rule:nonzero;opacity:1" vector-effect="non-scaling-stroke" transform="translate(-0.000005, 0)" d="M 24.35456 -42.83405 L 49.460499999999996 0 L 24.354559999999996 42.83405 L -24.042490000000004 42.83405 L -49.46049000000001 0 L -24.042490000000008 -42.83405 z" stroke-linecap="round"></path>
+  </g>
+  <g transform="matrix(0 -3.7846902983 3.7846902983 0 326.2365028795 250)" id="iSwpz3DKrz-8oFCDdA1kQ">
+    <path style="stroke:rgb(0,74,173);stroke-width:6;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill:none;fill-rule:nonzero;opacity:1" vector-effect="non-scaling-stroke" transform="translate(0.000005, 0)" d="M 24.68495 -42.83405 L 49.460499999999996 0 L 24.684949999999997 42.83405 L -24.68496 42.83405 L -49.46051 0 L -24.68496 -42.83405 z" stroke-linecap="round"></path>
+  </g>
+  <g transform="matrix(1 0 0 1 175.3748649888 250.2894982413)" style="" id="imNpUc7XAoMqQ2ulSLLNh">
+    <text xmlSpace="preserve" fontFamily="Montserrat" fontSize="38" fontStyle="normal" fontWeight="normal" line-height="1" style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill:rgb(255,255,255);fill-rule:nonzero;opacity:1;white-space:pre">
+      <tspan x="-84.765866394" y="-10.1352590754">Learning</tspan>
+      <tspan x="-143.984277153" y="32.8047409246">Self-Awareness</tspan>
+    </text>
+    <style>
+      @font-face {
+        font-family: "Montserrat";
+        font-weight: normal;
+      }
+    </style>
+  </g>
+</svg>

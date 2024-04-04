@@ -1,55 +1,37 @@
-import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 interface PhilosophyProps {
-  number: number;
+  firstText: string;
   text: string;
-  image: string;
+  image: React.ReactNode;
   imagePosition: "left" | "right";
 }
 
 const PhilosophyComponent: React.FC<PhilosophyProps> = ({
-  number,
+  firstText,
   text,
   image,
   imagePosition,
 }) => {
   const isImageOnLeft = imagePosition === "left";
-  const isMobile = window.innerWidth < 768;
 
   return (
     <AnimationOnScroll
-      className="flex flex-col md:flex-row items-center mb-8 justify-center mx-4 w-5/6"
+      className="flex flex-col md:flex-row items-center justify-center w-5/6 max-w-[90vw]"
       animateIn={`animate__fadeIn${isImageOnLeft ? "Left" : "Right"}`}
     >
+      <h1>
+        <span className="text-lg md:text-2xl font-bold text-[#004AAD]">
+          {firstText}
+        </span>{" "}
+        <span className="text-base md:text-xl text-[#004AAD]">{text}</span>
+      </h1>
       <div
-        className={`flex relative md:mr-4  text-[#3b3e463f] text-9xl font-serif italic align-top top-[-24px] ${
-          isMobile
-            ? "order-first right-[-50px]"
-            : isImageOnLeft
-            ? "order-last left-[-50px]"
-            : "order-first right-[-50px]"
+        className={`md:mt-0 max-w-[90vw] ${
+          isImageOnLeft ? "md:mr-2 md:order-first" : "md:ml-2 md:order-last"
         }`}
       >
-        {number}
-      </div>
-      <div className="text">
-        <h3 className="text-lg text-center font-bold mb-2">{text}</h3>
-      </div>
-      <div
-        className={`image mt-4 md:mt-0 ${
-          isMobile
-            ? "order-last ml-2"
-            : isImageOnLeft
-            ? "order-first mr-2"
-            : "order-last ml-2"
-        } `}
-      >
-        <img
-          src={image}
-          alt={`Philosophy ${number} image`}
-          className="w-40 h-40 object-cover rounded-lg"
-        />
+        {image}
       </div>
     </AnimationOnScroll>
   );

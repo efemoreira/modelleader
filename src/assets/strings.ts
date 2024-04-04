@@ -1,106 +1,77 @@
 const STR_CONSTANTS = {
   TITLE_HEADER: "MODEL LEADER",
-  SUBT_HEADER: "Leadership Coach",
-  BANNER_TEXT_1: "Unleach your",
-  BANNER_TEXT_2: "Potential",
-  ABOUT_MODEL_TITLE: "Model<br/>Leader",
+  BANNER_TEXT_1: "Lifting Society Through",
+  BANNER_TEXT_2: "Model Leadership.",
+  ABOUT_MODEL_TITLE: "What is a model leader?",
   ABOUT_MODEL_DESCRIPTION:
-    "We invite and equip leaders and leadership teams to discover, design, define and deliver their leadership models.",
+    "First, model leaders know who they are. They live according to a personalized set of hard-earned values and deeply-held principles. These values and principles may expand and deepen over time–Model Leaders are never finished in their quest for self-awareness.<br/> Second, model leaders put these principles and values into intentional strategy and consistent action. Those they lead know what to expect, even amid changing circumstances. These behaviors build mutual trust and belief for the individuals, teams and organizations they lead.<br/>Third, model leaders are drawn to and motivated by causes bigger than themselves. They act as stewards of society–temporary caretakers of our greatest needs. The difference they make can last for generations.<br/>These three ingredients come together to create a self-assured leader who inspires trust and lifts society.",
   ABOUT_ME_TITLE: "About<br/>Me",
   ABOUT_ME_DESCRIPTION:
     "Andrew Marshall is a seasoned professional with extensive experience in leadership development, management, journalism, and community development. As a certified executive coach, he has developed leaders and leadership teams across various sectors, including the private, nonprofit, and public sectors. He has worked with leaders at different levels, from aspiring supervisors to seasoned executives, to enhance their leadership skills and competencies.<br/>Before his time in leadership development, Andrew worked as a journalist, where he gained valuable experience in managing teams, setting strategic goals, and developing effective communication strategies. He also has a passion for community development and has worked in various capacities to bring about positive change in communities.<br/>Overall, Andrew is a highly skilled and experienced professional with a deep passion for leadership development, management, and community development. His unique combination of skills and experience makes him a valuable asset to any organization that values leadership development and strategic thinking.",
-  OFFERING_1_TITLE: "Consulting",
-  OFFERING_1_DESCRIPTION:
-    "We support organizations in building and activating leadership models through the following process, which can be tailored to the needs of the organization. ",
-  OFFERING_2_TITLE: "Cohort-based programs",
-  OFFERING_2_DESCRIPTION:
-    "Multi-month cohort-based programs bring leaders together from across sectors and contexts to discover, design, define and deliver on their leadership models.",
-  OFFERING_3_TITLE: "Coaching",
-  OFFERING_3_DESCRIPTION:
-    " One-on-one coaching, including a pre- and post-360 assessment, with an emphasis on defining leadership style and model.",
-  OFFERING_4_TITLE: "Custom Sessions",
-  OFFERING_4_DESCRIPTION:
-    "One-off sessions on the following topics:<br/>The Nature of Leadership<br/>The Art of Leadership<br/>Leadership in History<br/>Model Parenting<br/>Leadership retreats",
-  TESTIMONIALS: [
+  OFFERINGS: [
     {
       id: 1,
-      text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."',
-      name: "John Doe",
-      image: "https://via.placeholder.com/150",
+      title: "Leaders",
+      delay: 0,
+      icon: "leaders",
+      link: "/individual-leaders",
+      description:
+        "We coach public service leaders toward greater self-awareness and invite them to define their authentic leadership style.",
     },
     {
       id: 2,
-      text: '"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."',
-      name: "Jane Doe",
-      image: "https://via.placeholder.com/150",
+      title: "Teams",
+      delay: 200,
+      icon: "teams",
+      link: "/leadership-teams",
+      description:
+        "We partner with teams to facilitate workshops and retreats, fostering cohesion and trust around shared models for leading as well as clarity around what matters most.",
     },
     {
       id: 3,
-      text: '"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."',
-      name: "Bob Smith",
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 4,
-      text: '"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
-      name: "Alice Jones",
-      image: "https://via.placeholder.com/150",
+      title: "Organizations",
+      delay: 400,
+      icon: "organizations",
+      link: "/organizations",
+      description:
+        "We offer organizational keynotes and retreats to inspire and engage workforces, helping staff align their own motivations to the missions they are striving to accomplish.",
     },
   ],
   PHILOSOPHIES: [
     {
       id: 1,
-      text: "We believe that leadership sets the tone.",
-      image: "https://via.placeholder.com/150",
+      fistText: "Model leaders know who they are.",
+      text: "They live according to a personalized set of hard-earned values and deeply-held principles. These values and principles may expand and deepen over time – model leaders are never finished in their quest for self-awareness.",
+      image: "../assets/wiaml1.svg",
       imgPosition: "left",
     },
     {
       id: 2,
-      text: "We believe that their influence cascades.",
-      image: "https://via.placeholder.com/150",
+      fistText:
+        "Model leaders put principles and values into intentional strategy and consistent action.",
+      text: "Those they lead know what to expect, even amid changing circumstances. These behaviors build mutual trust and belief for the individuals, teams and organizations they lead.",
+      image: "../assets/wiaml2.svg",
       imgPosition: "right",
     },
     {
       id: 3,
-      text: "We believe that a principle-based leader can ignite the potential in those they lead.",
-      image: "https://via.placeholder.com/150",
+      fistText:
+        "Model leaders are drawn to and motivated by causes bigger than themselves.",
+      text: "They act as stewards of society–temporary caretakers of our greatest needs. They lead in government, nonprofit, education, healthcare and family organizations, working to positively impact individuals today and generations tomorrow.",
+      image: "../assets/wiaml3.svg",
       imgPosition: "left",
     },
+  ],
+  BLOG_POSTS: [
     {
-      id: 4,
-      text: "We believe that every person has an infinite potential and that leaders play a unique role in unlocking then unleashing it.",
-      image: "https://via.placeholder.com/150",
-      imgPosition: "right",
-    },
-    {
-      id: 5,
-      text: "We believe that the best leader is one who is grounded in space and in time and reverences the best of humanity.",
-      image: "https://via.placeholder.com/150",
-      imgPosition: "left",
-    },
-    {
-      id: 6,
-      text: "We believe that leaders can learn from history–reflection on the past matters.",
-      image: "https://via.placeholder.com/150",
-      imgPosition: "right",
-    },
-    {
-      id: 7,
-      text: "We believe that leaders can learn from nature, and that nature has a special binding power to the present. ",
-      image: "https://via.placeholder.com/150",
-      imgPosition: "left",
-    },
-    {
-      id: 8,
-      text: "We believe that leaders can learn from art and that art inspires creativity, adaptability and the improvising necessary to succeed in an ever-changing world.",
-      image: "https://via.placeholder.com/150",
-      imgPosition: "right",
-    },
-    {
-      id: 9,
-      text: "We believe that for leaders to maximize their impact and enhance accountability, they should build and adhere to their own intentional models.",
-      image: "https://via.placeholder.com/150",
-      imgPosition: "left",
+      id: 1,
+      title: "The Future of Work with John Smith",
+      date: "June 20, 2022",
+      author: "Jane Smith",
+      imageSrc: "https://via.placeholder.com/150",
+      altText: "string",
+      slug: "https://example.com/podcast2",
+      summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     },
   ],
 };
